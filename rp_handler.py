@@ -48,35 +48,7 @@ def download_file(url, target_dir, filename=None, api_key=None):
         print(f"Download failed: {e}")
         return False
 
-def process_workflow_thread(job_id, workflow_json):
-    global JOBS
-    try:
-        JOBS[job_id]["status"] = "IN_PROGRESS"
-        
-        # 1. Connect WS
-        ws = comfy_utils.connect_ws()
-        
-        # 2. Submit and Wait matches simple tracking
-        prompt_id = comfy_utils.track_progress(workflow_json, ws)
-        ws.close()
-        
-        # 3. Get History for Outputs
-        history = comfy_utils.get_history(prompt_id)[prompt_id]
-        outputs = history['outputs']
-        
-        final_images = []
-        for node_id, node_output in outputs.items():
-            if 'images' in node_output:
-                for img in node_output['images']:
-                    final_images.append(img)
-        
-        JOBS[job_id]["status"] = "COMPLETED"
-        JOBS[job_id]["output"] = {"images": final_images}
-        
-    except Exception as e:
-        print(f"Job {job_id} failed: {e}")
-        JOBS[job_id]["status"] = "FAILED"
-        JOBS[job_id]["error"] = str(e)
+
 
 
 def handler(event):
@@ -138,34 +110,42 @@ def handler(event):
         else:
             return {"status": "error", "message": "Download failed"}
 
-    # --- 4. POST /run (Async start) ---
+    # --- 4. POST /run (Synchronous for stability) ---
     if route == '/run' and method == 'POST':
-        # body is the workflow json (the "prompt" object for /prompt endpoint)
-        # Note: ComfyUI JSON often wraps in "prompt": {...} or is just the dict?
-        # Requirement says "checkpoints": [..], "loras": [..]
-        # BUT implies we construct the workflow?
-        # OR implementation assumes body IS the ComfyUI workflow.
-        # Let's assume body IS the workflow for maximum flexibility as per "Tech Scheme" 
-        # which mentions "submit workflow JSON" in 8.3 /run example.
-        
-        # Wait, 8.3 Example for /run payload is:
-        # { "checkpoints": [...], "loras": [...] } -> This implies CONSTRUCTING workflow.
-        # BUT later it says "Output: ComfyUI API format workflow JSON".
-        # I will support passing RAW workflow in body for now, as constructing dynamic workflows 
-        # is complex and depends on specific custom nodes.
-        # User likely sends a full workflow.
-        
         workflow = body
         import uuid
         job_id = f"run-{uuid.uuid4()}"
         
-        JOBS[job_id] = {"status": "IN_QUEUE"}
+        JOBS[job_id] = {"status": "IN_PROGRESS"}
         
-        # Run in thread so we can return ID immediately
-        t = threading.Thread(target=process_workflow_thread, args=(job_id, workflow))
-        t.start()
-        
-        return {"id": job_id, "status": "IN_QUEUE"}
+        try:
+            # 1. Connect WS
+            ws = comfy_utils.connect_ws()
+            
+            # 2. Submit and Wait (Sync)
+            prompt_id = comfy_utils.track_progress(workflow, ws)
+            ws.close()
+            
+            # 3. Get History for Outputs
+            history = comfy_utils.get_history(prompt_id)[prompt_id]
+            outputs = history['outputs']
+            
+            final_images = []
+            for node_id, node_output in outputs.items():
+                if 'images' in node_output:
+                    for img in node_output['images']:
+                        final_images.append(img)
+            
+            # Return result directly
+            return {
+                "id": job_id, 
+                "status": "COMPLETED", 
+                "output": {"images": final_images}
+            }
+            
+        except Exception as e:
+            print(f"Job {job_id} failed: {e}")
+            return {"id": job_id, "status": "FAILED", "error": str(e)}
 
     # --- 5. GET /result/{id} ---
     if route.startswith('/result/'):
