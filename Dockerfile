@@ -18,8 +18,10 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # 2. Install PyTorch (matching CUDA 12.1)
-# We install this first to leverage caching for large files
-RUN pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121
+# We install this first to leverage caching for large files.
+# Added --no-cache-dir to avoid OOM on GitHub Actions runners when downloading large wheels.
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121
 
 # 3. Install ComfyUI
 WORKDIR /
