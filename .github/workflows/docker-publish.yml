@@ -63,6 +63,8 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ secrets.DOCKER_USERNAME }}/comfyui-runpod-android:latest
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/comfyui-runpod-android:latest
+            ${{ secrets.DOCKER_USERNAME }}/comfyui-runpod-android:v1
           cache-from: type=gha
           cache-to: type=gha,mode=max
