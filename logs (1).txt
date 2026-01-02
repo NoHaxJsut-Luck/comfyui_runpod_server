@@ -1,0 +1,141 @@
+2026-01-02T08:36:08.747952754Z ==========
+2026-01-02T08:36:08.747960035Z == CUDA ==
+2026-01-02T08:36:08.748014686Z ==========
+2026-01-02T08:36:08.753354865Z CUDA Version 12.1.1
+2026-01-02T08:36:08.754299838Z Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+2026-01-02T08:36:08.756079551Z This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+2026-01-02T08:36:08.756086001Z By pulling and using the container, you accept the terms and conditions of this license:
+2026-01-02T08:36:08.756095912Z https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+2026-01-02T08:36:08.756107172Z A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+2026-01-02T08:36:08.776046226Z Setting up model paths...
+2026-01-02T08:36:08.812556104Z Starting ComfyUI...
+2026-01-02T08:36:08.812941588Z Waiting for ComfyUI to be ready...
+2026-01-02T08:36:08.824103352Z Waiting for ComfyUI... (1/30)
+2026-01-02T08:36:09.898953315Z [START] Security scan
+2026-01-02T08:36:09.898996776Z [DONE] Security scan
+2026-01-02T08:36:09.899002666Z ## ComfyUI-Manager: installing dependencies. (GitPython)
+2026-01-02T08:36:10.838615217Z Waiting for ComfyUI... (2/30)
+2026-01-02T08:36:12.854066005Z Waiting for ComfyUI... (3/30)
+2026-01-02T08:36:14.868357962Z Waiting for ComfyUI... (4/30)
+2026-01-02T08:36:16.385689700Z WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2026-01-02T08:36:16.564589854Z ## ComfyUI-Manager: installing dependencies done.
+2026-01-02T08:36:16.564717499Z ** ComfyUI startup time: 2026-01-02 08:36:16.564
+2026-01-02T08:36:16.564915596Z ** Platform: Linux
+2026-01-02T08:36:16.565080261Z ** Python version: 3.10.12 (main, Nov  4 2025, 08:48:33) [GCC 11.4.0]
+2026-01-02T08:36:16.565240687Z ** Python executable: /usr/bin/python3
+2026-01-02T08:36:16.565395493Z ** ComfyUI Path: /comfyui
+2026-01-02T08:36:16.565553548Z ** ComfyUI Base Folder Path: /comfyui
+2026-01-02T08:36:16.565704004Z ** User directory: /comfyui/user
+2026-01-02T08:36:16.565888140Z ** ComfyUI-Manager config path: /comfyui/user/__manager/config.ini
+2026-01-02T08:36:16.566239082Z ** Log path: /comfyui/user/comfyui.log
+2026-01-02T08:36:16.882971670Z Waiting for ComfyUI... (5/30)
+2026-01-02T08:36:17.243705171Z Prestartup times for custom nodes:
+2026-01-02T08:36:17.243776544Z    8.3 seconds: /comfyui/custom_nodes/ComfyUI-Manager
+2026-01-02T08:36:18.701850171Z Warning, you are using an old pytorch version and some ckpt/pt files might be loaded unsafely. Upgrading to 2.4 or above is recommended as older versions of pytorch are no longer supported.
+2026-01-02T08:36:18.864959888Z Total VRAM 20147 MB, total RAM 257588 MB
+2026-01-02T08:36:18.864984779Z pytorch version: 2.1.2+cu121
+2026-01-02T08:36:18.865364563Z Set vram state to: NORMAL_VRAM
+2026-01-02T08:36:18.865490857Z Device: cuda:0 NVIDIA RTX 4000 Ada Generation : cudaMallocAsync
+2026-01-02T08:36:18.865547239Z Using async weight offloading with 2 streams
+2026-01-02T08:36:18.865710455Z Enabled pinned memory 244708.0
+2026-01-02T08:36:18.874864788Z Please update pytorch to use native RMSNorm
+2026-01-02T08:36:18.896142039Z Waiting for ComfyUI... (6/30)
+2026-01-02T08:36:19.370846402Z Using pytorch attention
+2026-01-02T08:36:20.394881511Z Python version: 3.10.12 (main, Nov  4 2025, 08:48:33) [GCC 11.4.0]
+2026-01-02T08:36:20.394924663Z ComfyUI version: 0.7.0
+2026-01-02T08:36:20.398618853Z ComfyUI frontend version: 1.35.9
+2026-01-02T08:36:20.399163852Z [Prompt Server] web root: /usr/local/lib/python3.10/dist-packages/comfyui_frontend_package/static
+2026-01-02T08:36:20.874888931Z Total VRAM 20147 MB, total RAM 257588 MB
+2026-01-02T08:36:20.874927583Z pytorch version: 2.1.2+cu121
+2026-01-02T08:36:20.875114339Z Set vram state to: NORMAL_VRAM
+2026-01-02T08:36:20.875163281Z Device: cuda:0 NVIDIA RTX 4000 Ada Generation : cudaMallocAsync
+2026-01-02T08:36:20.875291256Z Using async weight offloading with 2 streams
+2026-01-02T08:36:20.875428400Z Enabled pinned memory 244708.0
+2026-01-02T08:36:20.909225573Z Waiting for ComfyUI... (7/30)
+2026-01-02T08:36:21.745754475Z ### Loading: ComfyUI-Manager (V3.39)
+2026-01-02T08:36:21.746044546Z [ComfyUI-Manager] network_mode: public
+2026-01-02T08:36:21.746129409Z [ComfyUI-Manager] ComfyUI per-queue preview override detected (PR #11261). Manager's preview method feature is disabled. Use ComfyUI's --preview-method CLI option or 'Settings > Execution > Live preview method'.
+2026-01-02T08:36:21.952930387Z ### ComfyUI Version: v0.7.0-6-g1bdc9a94 | Released on '2025-12-31'
+2026-01-02T08:36:21.975084789Z Import times for custom nodes:
+2026-01-02T08:36:21.975184412Z    0.0 seconds: /comfyui/custom_nodes/websocket_image_save.py
+2026-01-02T08:36:21.975276706Z    0.3 seconds: /comfyui/custom_nodes/ComfyUI-Manager
+2026-01-02T08:36:22.240046480Z [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+2026-01-02T08:36:22.250548700Z Context impl SQLiteImpl.
+2026-01-02T08:36:22.250676355Z Will assume non-transactional DDL.
+2026-01-02T08:36:22.251682130Z No target revision found.
+2026-01-02T08:36:22.287969681Z [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+2026-01-02T08:36:22.367330472Z [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+2026-01-02T08:36:22.464729209Z [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+2026-01-02T08:36:22.539835880Z [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+2026-01-02T08:36:22.556600691Z Starting server
+2026-01-02T08:36:22.557089599Z To see the GUI go to: http://127.0.0.1:8188
+2026-01-02T08:36:22.926875589Z ComfyUI is ready!
+2026-01-02T08:36:22.926916660Z Starting RunPod Handler...
+2026-01-02T08:36:24.425749956Z --- Starting Serverless Worker |  Version 1.8.1 ---
+2026-01-02T08:36:24.756730637Z {"requestId": null, "message": "Jobs in queue: 1", "level": "INFO"}
+2026-01-02T08:36:24.756775148Z {"requestId": null, "message": "Jobs in progress: 1", "level": "INFO"}
+2026-01-02T08:36:24.756869242Z {"requestId": "65619e6f-216e-4045-80d5-76b28776eeca-e1", "message": "Started.", "level": "INFO"}
+2026-01-02T08:36:24.756918444Z Received Request: POST /run
+2026-01-02T08:36:24.760582483Z got prompt
+2026-01-02T08:36:24.765548338Z Prompt ID: 09114e6d-b507-4078-9c35-a701a8cfa607 queued
+2026-01-02T08:36:28.331785316Z FETCH ComfyRegistry Data: 5/117
+2026-01-02T08:36:29.927106367Z model weight dtype torch.float16, manual cast: None
+2026-01-02T08:36:29.927881934Z model_type EPS
+2026-01-02T08:36:32.449434063Z FETCH ComfyRegistry Data: 10/117
+2026-01-02T08:36:36.269098784Z FETCH ComfyRegistry Data: 15/117
+2026-01-02T08:36:40.096873272Z FETCH ComfyRegistry Data: 20/117
+2026-01-02T08:36:43.931483400Z FETCH ComfyRegistry Data: 25/117
+2026-01-02T08:36:48.549890751Z FETCH ComfyRegistry Data: 30/117
+2026-01-02T08:36:52.816490425Z FETCH ComfyRegistry Data: 35/117
+2026-01-02T08:36:53.023251202Z Using pytorch attention in VAE
+2026-01-02T08:36:53.026259818Z Using pytorch attention in VAE
+2026-01-02T08:36:54.111037451Z VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+2026-01-02T08:36:56.651227928Z FETCH ComfyRegistry Data: 40/117
+2026-01-02T08:37:00.506881569Z FETCH ComfyRegistry Data: 45/117
+2026-01-02T08:37:01.828272813Z CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+2026-01-02T08:37:02.331954329Z Requested to load SDXLClipModel
+2026-01-02T08:37:02.591357233Z loaded completely; 18763.11 MB usable, 1560.80 MB loaded, full load: True
+2026-01-02T08:37:02.596663181Z !!! Exception during processing !!! module 'torch.compiler' has no attribute 'is_compiling'
+2026-01-02T08:37:02.599042625Z Traceback (most recent call last):
+2026-01-02T08:37:02.599080276Z   File "/comfyui/execution.py", line 518, in execute
+2026-01-02T08:37:02.599086506Z     output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
+2026-01-02T08:37:02.599092256Z   File "/comfyui/execution.py", line 329, in get_output_data
+2026-01-02T08:37:02.599097767Z     return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
+2026-01-02T08:37:02.599103327Z   File "/comfyui/execution.py", line 303, in _async_map_node_over_list
+2026-01-02T08:37:02.599108847Z     await process_inputs(input_dict, i)
+2026-01-02T08:37:02.599114287Z   File "/comfyui/execution.py", line 291, in process_inputs
+2026-01-02T08:37:02.599119767Z     result = f(**inputs)
+2026-01-02T08:37:02.599125378Z   File "/comfyui/nodes.py", line 77, in encode
+2026-01-02T08:37:02.599131258Z     return (clip.encode_from_tokens_scheduled(tokens), )
+2026-01-02T08:37:02.599136838Z   File "/comfyui/comfy/sd.py", line 207, in encode_from_tokens_scheduled
+2026-01-02T08:37:02.599142658Z     pooled_dict = self.encode_from_tokens(tokens, return_pooled=return_pooled, return_dict=True)
+2026-01-02T08:37:02.599148198Z   File "/comfyui/comfy/sd.py", line 271, in encode_from_tokens
+2026-01-02T08:37:02.599153659Z     o = self.cond_stage_model.encode_token_weights(tokens)
+2026-01-02T08:37:02.599159169Z   File "/comfyui/comfy/sdxl_clip.py", line 59, in encode_token_weights
+2026-01-02T08:37:02.599180329Z     g_out, g_pooled = self.clip_g.encode_token_weights(token_weight_pairs_g)
+2026-01-02T08:37:02.599190540Z   File "/comfyui/comfy/sd1_clip.py", line 45, in encode_token_weights
+2026-01-02T08:37:02.599196010Z     o = self.encode(to_encode)
+2026-01-02T08:37:02.599201710Z   File "/comfyui/comfy/sd1_clip.py", line 297, in encode
+2026-01-02T08:37:02.599211471Z     return self(tokens)
+2026-01-02T08:37:02.599224691Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+2026-01-02T08:37:02.599235051Z     return self._call_impl(*args, **kwargs)
+2026-01-02T08:37:02.599241692Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+2026-01-02T08:37:02.599252462Z     return forward_call(*args, **kwargs)
+2026-01-02T08:37:02.599263572Z   File "/comfyui/comfy/sd1_clip.py", line 257, in forward
+2026-01-02T08:37:02.599277463Z     embeds, attention_mask, num_tokens, embeds_info = self.process_tokens(tokens, device)
+2026-01-02T08:37:02.599286773Z   File "/comfyui/comfy/sd1_clip.py", line 204, in process_tokens
+2026-01-02T08:37:02.599294124Z     tokens_embed = self.transformer.get_input_embeddings()(tokens_embed, out_dtype=torch.float32)
+2026-01-02T08:37:02.599303524Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+2026-01-02T08:37:02.599310264Z     return self._call_impl(*args, **kwargs)
+2026-01-02T08:37:02.599324985Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+2026-01-02T08:37:02.599334625Z     return forward_call(*args, **kwargs)
+2026-01-02T08:37:02.599345085Z   File "/comfyui/comfy/ops.py", line 355, in forward
+2026-01-02T08:37:02.599357966Z     run_every_op()
+2026-01-02T08:37:02.599366716Z   File "/comfyui/comfy/ops.py", line 28, in run_every_op
+2026-01-02T08:37:02.599373176Z     if torch.compiler.is_compiling():
+2026-01-02T08:37:02.599383857Z AttributeError: module 'torch.compiler' has no attribute 'is_compiling'
+2026-01-02T08:37:02.599779751Z Prompt executed in 37.83 seconds
+2026-01-02T08:37:02.778635173Z Prompt 09114e6d-b507-4078-9c35-a701a8cfa607 completed
+2026-01-02T08:37:02.879927077Z {"requestId": "65619e6f-216e-4045-80d5-76b28776eeca-e1", "message": "Finished.", "level": "INFO"}
+2026-01-02T08:37:04.504569973Z FETCH ComfyRegistry Data: 50/117
+2026-01-02T08:37:08.348081916Z FETCH ComfyRegistry Data: 55/117

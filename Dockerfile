@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.1.1-devel-ubuntu22.04
+FROM nvidia/cuda:12.1.1-runtime-ubuntu22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
@@ -18,11 +18,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # 2. Install PyTorch (matching CUDA 12.1)
-# Split installation to avoid OOM on weak build runners
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir --default-timeout=100 torch==2.1.2 --index-url https://download.pytorch.org/whl/cu121
-RUN pip install --no-cache-dir --default-timeout=100 torchvision==0.16.2 --index-url https://download.pytorch.org/whl/cu121
-RUN pip install --no-cache-dir --default-timeout=100 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121
+RUN pip install --no-cache-dir torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu121
 
 # 3. Install ComfyUI
 WORKDIR /
