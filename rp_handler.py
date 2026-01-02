@@ -21,7 +21,9 @@ MODELS_DIR_MAP = {
     "controlnet": f"{ROOT_DIR}/models/controlnet",
 }
 
-def download_file(url, target_dir, filename=None):
+import requests
+
+def download_file(url, target_dir, filename=None, api_key=None):
     if not os.path.exists(target_dir):
         os.makedirs(target_dir, exist_ok=True)
     
@@ -30,10 +32,17 @@ def download_file(url, target_dir, filename=None):
         
     file_path = os.path.join(target_dir, filename)
     
-    # Simple download
+    headers = {}
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+    
     try:
         print(f"Downloading {url} to {file_path}")
-        urllib.request.urlretrieve(url, file_path)
+        with requests.get(url, headers=headers, stream=True) as r:
+            r.raise_for_status()
+            with open(file_path, 'wb') as f:
+                for chunk in r.iter_content(chunk_size=8192):
+                    f.write(chunk)
         return True
     except Exception as e:
         print(f"Download failed: {e}")
@@ -55,13 +64,6 @@ def process_workflow_thread(job_id, workflow_json):
         history = comfy_utils.get_history(prompt_id)[prompt_id]
         outputs = history['outputs']
         
-        # 4. Parse Outputs to standard result format
-        # We need to extract images. 
-        # For simplicity, we just return the 'outputs' dict structure plus URL hints if we had a bucket.
-        # Since we don't have a bucket, we might just list filenames found in output.
-        # But the Requirement asked for "url": "..." in result.
-        # We will wrap it. 
-        
         final_images = []
         for node_id, node_output in outputs.items():
             if 'images' in node_output:
@@ -78,22 +80,28 @@ def process_workflow_thread(job_id, workflow_json):
 
 
 def handler(event):
-    """
-    Main Entry Point.
-    Expected Input Format:
-    {
-        "input": {
-            "route": "/catalog" | "/models" | ... ,
-            "method": "GET" | "POST",
-            "body": { ... }
-        }
-    }
-    """
     req = event.get('input', {})
-    route = req.get('route', '')
+    
+    # If input is empty, maybe the event IS the input
+    if not req and event:
+        req = event
+        
+    route = req.get('route')
     method = req.get('method', 'GET')
     body = req.get('body', {})
     
+    # Auto-route to /run if it looks like a ComfyUI workflow (has nodes)
+    # or if route is missing but it's a POST
+    if not route:
+        if any(key.isdigit() for key in req.keys()): # ComfyUI JSON usually has numeric keys
+            route = '/run'
+            body = req
+        elif method == 'POST':
+            route = '/run'
+            body = req
+        else:
+            route = '/catalog' # default to catalog for sanity check
+
     print(f"Received Request: {method} {route}")
     
     # --- 1. GET /catalog ---
@@ -102,10 +110,7 @@ def handler(event):
         return info
 
     # --- 2. GET /models ---
-    if route.startswith('/models'):
-        # Just simple list of checkpoints for now, or robust walker
-        # Requirement: list models files
-        # We support query param "type" from body if needed, or just list all
+    if route.startswith('/models') and method == 'GET':
         categories = ["checkpoints", "loras", "vae", "controlnet"]
         result = {}
         for cat in categories:
@@ -119,14 +124,15 @@ def handler(event):
     # --- 3. POST /models/download ---
     if route == '/models/download' and method == 'POST':
         url = body.get('url')
-        m_type = body.get('type') # checkpoint, lora, etc
+        m_type = body.get('type')
         filename = body.get('filename')
+        api_key = body.get('api_key') or body.get('civitai_api_key')
         
         target_dir = MODELS_DIR_MAP.get(m_type)
         if not target_dir:
             return {"error": f"Invalid type: {m_type}"}
             
-        success = download_file(url, target_dir, filename)
+        success = download_file(url, target_dir, filename, api_key)
         if success:
             return {"status": "success", "file": filename}
         else:
