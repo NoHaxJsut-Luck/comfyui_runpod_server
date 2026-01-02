@@ -1,0 +1,19 @@
+{
+    "input": {
+        "route": {
+            "type": "string",
+            "description": "API route path (e.g., /catalog, /run)",
+            "default": "/catalog"
+        },
+        "method": {
+            "type": "string",
+            "description": "HTTP method (GET, POST)",
+            "default": "GET"
+        },
+        "body": {
+            "type": "object",
+            "description": "Request body for POST requests",
+            "default": {}
+        }
+    }
+}

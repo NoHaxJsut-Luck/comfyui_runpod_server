@@ -1,0 +1,12 @@
+{
+    "tests": [
+        {
+            "name": "catalog_check",
+            "input": {
+                "route": "/catalog",
+                "method": "GET"
+            },
+            "timeout": 60000
+        }
+    ]
+}
