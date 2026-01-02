@@ -114,6 +114,7 @@ def handler(event):
     if route == '/run' and method == 'POST':
         workflow = body
         import uuid
+        import base64
         job_id = f"run-{uuid.uuid4()}"
         
         JOBS[job_id] = {"status": "IN_PROGRESS"}
@@ -134,6 +135,9 @@ def handler(event):
             for node_id, node_output in outputs.items():
                 if 'images' in node_output:
                     for img in node_output['images']:
+                        # Fetch image data and encode as base64
+                        img_data = comfy_utils.get_image(img['filename'], img['subfolder'], img['type'])
+                        img['base64'] = base64.b64encode(img_data).decode('utf-8')
                         final_images.append(img)
             
             # Return result directly
