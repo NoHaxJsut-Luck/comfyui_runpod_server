@@ -1,0 +1,10 @@
+runpod
+requests
+aiohttp
+websockets
+# Torch dependencies are usually pre-installed in the base image or handled separately, 
+# but explicitly listing a compatible version helps with reproducibility if not using a fat base.
+# For runpod standard usage, we often leverage their base cache, but here we build from nvidia base.
+torch==2.1.2 --index-url https://download.pytorch.org/whl/cu121
+torchvision==0.16.2 --index-url https://download.pytorch.org/whl/cu121
+torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121
