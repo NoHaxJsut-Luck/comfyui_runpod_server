@@ -32,7 +32,7 @@ RUN pip install -r requirements.txt
 
 # 4. Install RunPod Handler dependencies
 COPY requirements.txt /requirements_handler.txt
-RUN pip install -r /requirements_handler.txt
+RUN pip install --no-cache-dir -r /requirements_handler.txt
 
 # 5. Install ComfyUI Manager (Optional but good for extensions)
 WORKDIR /comfyui/custom_nodes

@@ -1,0 +1,794 @@
+2026-01-02T03:37:13.381693279Z ==========
+2026-01-02T03:37:13.381697879Z == CUDA ==
+2026-01-02T03:37:13.381701000Z ==========
+2026-01-02T03:37:13.381707020Z CUDA Version 12.1.1
+2026-01-02T03:37:13.381713600Z Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+2026-01-02T03:37:13.381719960Z This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+2026-01-02T03:37:13.381723230Z By pulling and using the container, you accept the terms and conditions of this license:
+2026-01-02T03:37:13.381726200Z https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+2026-01-02T03:37:13.381732391Z A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+2026-01-02T03:37:13.396501407Z Starting ComfyUI...
+2026-01-02T03:37:13.396957093Z Waiting for ComfyUI to be ready...
+2026-01-02T03:37:13.408255793Z Waiting for ComfyUI... (1/30)
+2026-01-02T03:37:14.496654754Z [START] Security scan
+2026-01-02T03:37:14.496674845Z [DONE] Security scan
+2026-01-02T03:37:14.496677725Z ## ComfyUI-Manager: installing dependencies. (GitPython)
+2026-01-02T03:37:15.423161908Z Waiting for ComfyUI... (2/30)
+2026-01-02T03:37:17.436784780Z Waiting for ComfyUI... (3/30)
+2026-01-02T03:37:19.451445076Z Waiting for ComfyUI... (4/30)
+2026-01-02T03:37:20.899814409Z WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2026-01-02T03:37:21.085884380Z ## ComfyUI-Manager: installing dependencies done.
+2026-01-02T03:37:21.086036815Z ** ComfyUI startup time: 2026-01-02 03:37:21.085
+2026-01-02T03:37:21.086227821Z ** Platform: Linux
+2026-01-02T03:37:21.086418078Z ** Python version: 3.10.12 (main, Nov  4 2025, 08:48:33) [GCC 11.4.0]
+2026-01-02T03:37:21.086638845Z ** Python executable: /usr/bin/python3
+2026-01-02T03:37:21.086825081Z ** ComfyUI Path: /comfyui
+2026-01-02T03:37:21.087001307Z ** ComfyUI Base Folder Path: /comfyui
+2026-01-02T03:37:21.087243286Z ** User directory: /comfyui/user
+2026-01-02T03:37:21.087359469Z ** ComfyUI-Manager config path: /comfyui/user/__manager/config.ini
+2026-01-02T03:37:21.087748202Z ** Log path: /comfyui/user/comfyui.log
+2026-01-02T03:37:21.466053311Z Waiting for ComfyUI... (5/30)
+2026-01-02T03:37:21.756777323Z Prestartup times for custom nodes:
+2026-01-02T03:37:21.756888467Z    8.2 seconds: /comfyui/custom_nodes/ComfyUI-Manager
+2026-01-02T03:37:22.517154157Z A module that was compiled using NumPy 1.x cannot be run in
+2026-01-02T03:37:22.517158867Z NumPy 2.2.6 as it may crash. To support both 1.x and 2.x
+2026-01-02T03:37:22.517161928Z versions of NumPy, modules must be compiled with NumPy 2.0.
+2026-01-02T03:37:22.517165128Z Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+2026-01-02T03:37:22.517171728Z If you are a user of the module, the easiest solution will be to
+2026-01-02T03:37:22.517175158Z downgrade to 'numpy<2' or try to upgrade the affected module.
+2026-01-02T03:37:22.517178248Z We expect that some modules will need time to support NumPy 2.
+2026-01-02T03:37:22.517184338Z Traceback (most recent call last):  File "/comfyui/main.py", line 175, in <module>
+2026-01-02T03:37:22.517187748Z     import comfy.utils
+2026-01-02T03:37:22.517191509Z   File "/comfyui/comfy/utils.py", line 20, in <module>
+2026-01-02T03:37:22.517194839Z     import torch
+2026-01-02T03:37:22.517198609Z   File "/usr/local/lib/python3.10/dist-packages/torch/__init__.py", line 1382, in <module>
+2026-01-02T03:37:22.517201619Z     from .functional import *  # noqa: F403
+2026-01-02T03:37:22.517205149Z   File "/usr/local/lib/python3.10/dist-packages/torch/functional.py", line 7, in <module>
+2026-01-02T03:37:22.517208139Z     import torch.nn.functional as F
+2026-01-02T03:37:22.517231500Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/__init__.py", line 1, in <module>
+2026-01-02T03:37:22.517234930Z     from .modules import *  # noqa: F403
+2026-01-02T03:37:22.517237950Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/__init__.py", line 35, in <module>
+2026-01-02T03:37:22.517241410Z     from .transformer import TransformerEncoder, TransformerDecoder, \
+2026-01-02T03:37:22.517244540Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py", line 20, in <module>
+2026-01-02T03:37:22.517247710Z     device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+2026-01-02T03:37:22.517520790Z /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+2026-01-02T03:37:22.517530110Z   device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+2026-01-02T03:37:23.274481129Z Warning, you are using an old pytorch version and some ckpt/pt files might be loaded unsafely. Upgrading to 2.4 or above is recommended as older versions of pytorch are no longer supported.
+2026-01-02T03:37:23.476292709Z Waiting for ComfyUI... (6/30)
+2026-01-02T03:37:23.598560503Z Total VRAM 20043 MB, total RAM 257586 MB
+2026-01-02T03:37:23.598640686Z pytorch version: 2.1.2+cu121
+2026-01-02T03:37:23.599056030Z Set vram state to: NORMAL_VRAM
+2026-01-02T03:37:23.599184834Z Device: cuda:0 NVIDIA RTX A4500 : cudaMallocAsync
+2026-01-02T03:37:23.599276657Z Using async weight offloading with 2 streams
+2026-01-02T03:37:23.599439623Z Enabled pinned memory 244706.0
+2026-01-02T03:37:23.609560493Z Please update pytorch to use native RMSNorm
+2026-01-02T03:37:23.800690524Z Traceback (most recent call last):
+2026-01-02T03:37:23.800727715Z   File "/comfyui/main.py", line 177, in <module>
+2026-01-02T03:37:23.800799998Z     import execution
+2026-01-02T03:37:23.800838909Z   File "/comfyui/execution.py", line 16, in <module>
+2026-01-02T03:37:23.801007275Z     from latent_preview import set_preview_method
+2026-01-02T03:37:23.801217372Z   File "/comfyui/latent_preview.py", line 5, in <module>
+2026-01-02T03:37:23.801244703Z     from comfy.sd import VAE
+2026-01-02T03:37:23.801261323Z   File "/comfyui/comfy/sd.py", line 11, in <module>
+2026-01-02T03:37:23.801413658Z     from .ldm.cascade.stage_c_coder import StageC_coder
+2026-01-02T03:37:23.801474520Z   File "/comfyui/comfy/ldm/cascade/stage_c_coder.py", line 19, in <module>
+2026-01-02T03:37:23.801667517Z     import torchvision
+2026-01-02T03:37:23.801746740Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/__init__.py", line 6, in <module>
+2026-01-02T03:37:23.801930026Z     from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils
+2026-01-02T03:37:23.801966527Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/models/__init__.py", line 2, in <module>
+2026-01-02T03:37:23.802112062Z     from .convnext import *
+2026-01-02T03:37:23.802162184Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/models/convnext.py", line 8, in <module>
+2026-01-02T03:37:23.802312609Z     from ..ops.misc import Conv2dNormActivation, Permute
+2026-01-02T03:37:23.802353270Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/ops/__init__.py", line 1, in <module>
+2026-01-02T03:37:23.802517956Z     from ._register_onnx_ops import _register_custom_op
+2026-01-02T03:37:23.802561357Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/ops/_register_onnx_ops.py", line 5, in <module>
+2026-01-02T03:37:23.802731133Z     from torch.onnx import symbolic_opset11 as opset11
+2026-01-02T03:37:23.802778994Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/__init__.py", line 46, in <module>
+2026-01-02T03:37:23.802935770Z     from ._internal.exporter import (  # usort:skip. needs to be last to avoid circular import
+2026-01-02T03:37:23.802979561Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/exporter.py", line 42, in <module>
+2026-01-02T03:37:23.803141897Z     from torch.onnx._internal.fx import (
+2026-01-02T03:37:23.803188388Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/fx/__init__.py", line 1, in <module>
+2026-01-02T03:37:23.803336553Z     from .patcher import ONNXTorchPatcher
+2026-01-02T03:37:23.803387495Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/fx/patcher.py", line 11, in <module>
+2026-01-02T03:37:23.803541990Z     import transformers  # type: ignore[import]
+2026-01-02T03:37:23.803589912Z   File "/usr/local/lib/python3.10/dist-packages/transformers/__init__.py", line 27, in <module>
+2026-01-02T03:37:23.803775278Z     from . import dependency_versions_check
+2026-01-02T03:37:23.803822920Z   File "/usr/local/lib/python3.10/dist-packages/transformers/dependency_versions_check.py", line 16, in <module>
+2026-01-02T03:37:23.803979745Z     from .utils.versions import require_version, require_version_core
+2026-01-02T03:37:23.804022936Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/__init__.py", line 24, in <module>
+2026-01-02T03:37:23.804187272Z     from .auto_docstring import (
+2026-01-02T03:37:23.804230133Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/auto_docstring.py", line 30, in <module>
+2026-01-02T03:37:23.804393059Z     from .generic import ModelOutput
+2026-01-02T03:37:23.804436830Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 465, in <module>
+2026-01-02T03:37:23.804635227Z     _torch_pytree.register_pytree_node(
+2026-01-02T03:37:23.804941807Z AttributeError: module 'torch.utils._pytree' has no attribute 'register_pytree_node'. Did you mean: '_register_pytree_node'?
+2026-01-02T03:37:25.491393321Z Waiting for ComfyUI... (7/30)
+2026-01-02T03:37:27.505296422Z Waiting for ComfyUI... (8/30)
+2026-01-02T03:37:29.520015600Z Waiting for ComfyUI... (9/30)
+2026-01-02T03:37:31.534842623Z Waiting for ComfyUI... (10/30)
+2026-01-02T03:37:33.548555277Z Waiting for ComfyUI... (11/30)
+2026-01-02T03:37:35.563671140Z Waiting for ComfyUI... (12/30)
+2026-01-02T03:37:37.578036126Z Waiting for ComfyUI... (13/30)
+2026-01-02T03:37:39.592951091Z Waiting for ComfyUI... (14/30)
+2026-01-02T03:37:41.607977810Z Waiting for ComfyUI... (15/30)
+2026-01-02T03:37:43.622315946Z Waiting for ComfyUI... (16/30)
+2026-01-02T03:37:45.637081006Z Waiting for ComfyUI... (17/30)
+2026-01-02T03:37:47.651176744Z Waiting for ComfyUI... (18/30)
+2026-01-02T03:37:49.664213806Z Waiting for ComfyUI... (19/30)
+2026-01-02T03:37:51.677404223Z Waiting for ComfyUI... (20/30)
+2026-01-02T03:37:53.691828382Z Waiting for ComfyUI... (21/30)
+2026-01-02T03:37:55.705802546Z Waiting for ComfyUI... (22/30)
+2026-01-02T03:37:57.720517234Z Waiting for ComfyUI... (23/30)
+2026-01-02T03:37:59.735190711Z Waiting for ComfyUI... (24/30)
+2026-01-02T03:38:01.749776525Z Waiting for ComfyUI... (25/30)
+2026-01-02T03:38:03.762776456Z Waiting for ComfyUI... (26/30)
+2026-01-02T03:38:05.776297495Z Waiting for ComfyUI... (27/30)
+2026-01-02T03:38:07.791182949Z Waiting for ComfyUI... (28/30)
+2026-01-02T03:38:09.805168963Z Waiting for ComfyUI... (29/30)
+2026-01-02T03:38:11.819672384Z Waiting for ComfyUI... (30/30)
+2026-01-02T03:38:13.821796849Z Starting RunPod Handler...
+2026-01-02T03:38:15.321301262Z Traceback (most recent call last):
+2026-01-02T03:38:15.321339614Z   File "/rp_handler.py", line 8, in <module>
+2026-01-02T03:38:15.321345964Z     import comfy_utils
+2026-01-02T03:38:15.321352024Z   File "/comfy_utils.py", line 1, in <module>
+2026-01-02T03:38:15.321357454Z     import websocket
+2026-01-02T03:38:15.321362874Z ModuleNotFoundError: No module named 'websocket'
+2026-01-02T03:38:17.371253536Z ==========
+2026-01-02T03:38:17.371260377Z == CUDA ==
+2026-01-02T03:38:17.371272837Z ==========
+2026-01-02T03:38:17.377368962Z CUDA Version 12.1.1
+2026-01-02T03:38:17.379598437Z Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+2026-01-02T03:38:17.381665547Z This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+2026-01-02T03:38:17.381670747Z By pulling and using the container, you accept the terms and conditions of this license:
+2026-01-02T03:38:17.381674367Z https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+2026-01-02T03:38:17.381694698Z A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+2026-01-02T03:38:17.400719318Z Starting ComfyUI...
+2026-01-02T03:38:17.401206234Z Waiting for ComfyUI to be ready...
+2026-01-02T03:38:17.409023947Z Waiting for ComfyUI... (1/30)
+2026-01-02T03:38:18.599138721Z [START] Security scan
+2026-01-02T03:38:18.599165042Z [DONE] Security scan
+2026-01-02T03:38:18.599169302Z ## ComfyUI-Manager: installing dependencies done.
+2026-01-02T03:38:18.599173472Z ** ComfyUI startup time: 2026-01-02 03:38:18.598
+2026-01-02T03:38:18.599256315Z ** Platform: Linux
+2026-01-02T03:38:18.599355948Z ** Python version: 3.10.12 (main, Nov  4 2025, 08:48:33) [GCC 11.4.0]
+2026-01-02T03:38:18.599448241Z ** Python executable: /usr/bin/python3
+2026-01-02T03:38:18.599526974Z ** ComfyUI Path: /comfyui
+2026-01-02T03:38:18.599663858Z ** ComfyUI Base Folder Path: /comfyui
+2026-01-02T03:38:18.599767152Z ** User directory: /comfyui/user
+2026-01-02T03:38:18.599843285Z ** ComfyUI-Manager config path: /comfyui/user/__manager/config.ini
+2026-01-02T03:38:18.599974439Z ** Log path: /comfyui/user/comfyui.log
+2026-01-02T03:38:19.266229226Z Prestartup times for custom nodes:
+2026-01-02T03:38:19.266485335Z    1.7 seconds: /comfyui/custom_nodes/ComfyUI-Manager
+2026-01-02T03:38:19.423274320Z Waiting for ComfyUI... (2/30)
+2026-01-02T03:38:19.955511538Z A module that was compiled using NumPy 1.x cannot be run in
+2026-01-02T03:38:19.955514738Z NumPy 2.2.6 as it may crash. To support both 1.x and 2.x
+2026-01-02T03:38:19.955517258Z versions of NumPy, modules must be compiled with NumPy 2.0.
+2026-01-02T03:38:19.955519958Z Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+2026-01-02T03:38:19.955525659Z If you are a user of the module, the easiest solution will be to
+2026-01-02T03:38:19.955528629Z downgrade to 'numpy<2' or try to upgrade the affected module.
+2026-01-02T03:38:19.955531129Z We expect that some modules will need time to support NumPy 2.
+2026-01-02T03:38:19.955535899Z Traceback (most recent call last):  File "/comfyui/main.py", line 175, in <module>
+2026-01-02T03:38:19.955539199Z     import comfy.utils
+2026-01-02T03:38:19.955542239Z   File "/comfyui/comfy/utils.py", line 20, in <module>
+2026-01-02T03:38:19.955544669Z     import torch
+2026-01-02T03:38:19.955547599Z   File "/usr/local/lib/python3.10/dist-packages/torch/__init__.py", line 1382, in <module>
+2026-01-02T03:38:19.955550099Z     from .functional import *  # noqa: F403
+2026-01-02T03:38:19.955553050Z   File "/usr/local/lib/python3.10/dist-packages/torch/functional.py", line 7, in <module>
+2026-01-02T03:38:19.955555440Z     import torch.nn.functional as F
+2026-01-02T03:38:19.955557890Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/__init__.py", line 1, in <module>
+2026-01-02T03:38:19.955560330Z     from .modules import *  # noqa: F403
+2026-01-02T03:38:19.955562850Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/__init__.py", line 35, in <module>
+2026-01-02T03:38:19.955565710Z     from .transformer import TransformerEncoder, TransformerDecoder, \
+2026-01-02T03:38:19.955568100Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py", line 20, in <module>
+2026-01-02T03:38:19.955570730Z     device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+2026-01-02T03:38:19.955865030Z /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+2026-01-02T03:38:19.955881341Z   device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+2026-01-02T03:38:20.738155212Z Warning, you are using an old pytorch version and some ckpt/pt files might be loaded unsafely. Upgrading to 2.4 or above is recommended as older versions of pytorch are no longer supported.
+2026-01-02T03:38:21.047225701Z Total VRAM 20043 MB, total RAM 257586 MB
+2026-01-02T03:38:21.047289243Z pytorch version: 2.1.2+cu121
+2026-01-02T03:38:21.047661475Z Set vram state to: NORMAL_VRAM
+2026-01-02T03:38:21.047743708Z Device: cuda:0 NVIDIA RTX A4500 : cudaMallocAsync
+2026-01-02T03:38:21.047820311Z Using async weight offloading with 2 streams
+2026-01-02T03:38:21.048049958Z Enabled pinned memory 244706.0
+2026-01-02T03:38:21.049547849Z Please update pytorch to use native RMSNorm
+2026-01-02T03:38:21.219938762Z Traceback (most recent call last):
+2026-01-02T03:38:21.219969863Z   File "/comfyui/main.py", line 177, in <module>
+2026-01-02T03:38:21.220190921Z     import execution
+2026-01-02T03:38:21.220204971Z   File "/comfyui/execution.py", line 16, in <module>
+2026-01-02T03:38:21.220242322Z     from latent_preview import set_preview_method
+2026-01-02T03:38:21.220301644Z   File "/comfyui/latent_preview.py", line 5, in <module>
+2026-01-02T03:38:21.220456919Z     from comfy.sd import VAE
+2026-01-02T03:38:21.220504851Z   File "/comfyui/comfy/sd.py", line 11, in <module>
+2026-01-02T03:38:21.220677147Z     from .ldm.cascade.stage_c_coder import StageC_coder
+2026-01-02T03:38:21.220712768Z   File "/comfyui/comfy/ldm/cascade/stage_c_coder.py", line 19, in <module>
+2026-01-02T03:38:21.220881424Z     import torchvision
+2026-01-02T03:38:21.220945806Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/__init__.py", line 6, in <module>
+2026-01-02T03:38:21.221113662Z     from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils
+2026-01-02T03:38:21.221139052Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/models/__init__.py", line 2, in <module>
+2026-01-02T03:38:21.221304228Z     from .convnext import *
+2026-01-02T03:38:21.221386041Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/models/convnext.py", line 8, in <module>
+2026-01-02T03:38:21.221518625Z     from ..ops.misc import Conv2dNormActivation, Permute
+2026-01-02T03:38:21.221563067Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/ops/__init__.py", line 1, in <module>
+2026-01-02T03:38:21.221739563Z     from ._register_onnx_ops import _register_custom_op
+2026-01-02T03:38:21.221787144Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/ops/_register_onnx_ops.py", line 5, in <module>
+2026-01-02T03:38:21.221958960Z     from torch.onnx import symbolic_opset11 as opset11
+2026-01-02T03:38:21.221974971Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/__init__.py", line 46, in <module>
+2026-01-02T03:38:21.222150276Z     from ._internal.exporter import (  # usort:skip. needs to be last to avoid circular import
+2026-01-02T03:38:21.222191478Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/exporter.py", line 42, in <module>
+2026-01-02T03:38:21.222366644Z     from torch.onnx._internal.fx import (
+2026-01-02T03:38:21.222402955Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/fx/__init__.py", line 1, in <module>
+2026-01-02T03:38:21.222554730Z     from .patcher import ONNXTorchPatcher
+2026-01-02T03:38:21.222606322Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/fx/patcher.py", line 11, in <module>
+2026-01-02T03:38:21.222767967Z     import transformers  # type: ignore[import]
+2026-01-02T03:38:21.222813269Z   File "/usr/local/lib/python3.10/dist-packages/transformers/__init__.py", line 27, in <module>
+2026-01-02T03:38:21.222974084Z     from . import dependency_versions_check
+2026-01-02T03:38:21.223012685Z   File "/usr/local/lib/python3.10/dist-packages/transformers/dependency_versions_check.py", line 16, in <module>
+2026-01-02T03:38:21.223167061Z     from .utils.versions import require_version, require_version_core
+2026-01-02T03:38:21.223222212Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/__init__.py", line 24, in <module>
+2026-01-02T03:38:21.223366597Z     from .auto_docstring import (
+2026-01-02T03:38:21.223433190Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/auto_docstring.py", line 30, in <module>
+2026-01-02T03:38:21.223572964Z     from .generic import ModelOutput
+2026-01-02T03:38:21.223634146Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 465, in <module>
+2026-01-02T03:38:21.223844303Z     _torch_pytree.register_pytree_node(
+2026-01-02T03:38:21.224110952Z AttributeError: module 'torch.utils._pytree' has no attribute 'register_pytree_node'. Did you mean: '_register_pytree_node'?
+2026-01-02T03:38:21.437205742Z Waiting for ComfyUI... (3/30)
+2026-01-02T03:38:23.450821484Z Waiting for ComfyUI... (4/30)
+2026-01-02T03:38:25.465753370Z Waiting for ComfyUI... (5/30)
+2026-01-02T03:38:27.479234557Z Waiting for ComfyUI... (6/30)
+2026-01-02T03:38:29.493777339Z Waiting for ComfyUI... (7/30)
+2026-01-02T03:38:31.508290911Z Waiting for ComfyUI... (8/30)
+2026-01-02T03:38:33.523377192Z Waiting for ComfyUI... (9/30)
+2026-01-02T03:38:35.538667920Z Waiting for ComfyUI... (10/30)
+2026-01-02T03:38:37.553498752Z Waiting for ComfyUI... (11/30)
+2026-01-02T03:38:39.567530128Z Waiting for ComfyUI... (12/30)
+2026-01-02T03:38:41.580901671Z Waiting for ComfyUI... (13/30)
+2026-01-02T03:38:43.594863665Z Waiting for ComfyUI... (14/30)
+2026-01-02T03:38:45.609823331Z Waiting for ComfyUI... (15/30)
+2026-01-02T03:38:47.624404485Z Waiting for ComfyUI... (16/30)
+2026-01-02T03:38:49.639897330Z Waiting for ComfyUI... (17/30)
+2026-01-02T03:38:51.653907635Z Waiting for ComfyUI... (18/30)
+2026-01-02T03:38:53.668449867Z Waiting for ComfyUI... (19/30)
+2026-01-02T03:38:55.683726055Z Waiting for ComfyUI... (20/30)
+2026-01-02T03:38:57.698270388Z Waiting for ComfyUI... (21/30)
+2026-01-02T03:38:59.713204893Z Waiting for ComfyUI... (22/30)
+2026-01-02T03:39:01.728810782Z Waiting for ComfyUI... (23/30)
+2026-01-02T03:39:03.742945631Z Waiting for ComfyUI... (24/30)
+2026-01-02T03:39:05.757874697Z Waiting for ComfyUI... (25/30)
+2026-01-02T03:39:07.772992879Z Waiting for ComfyUI... (26/30)
+2026-01-02T03:39:09.787968696Z Waiting for ComfyUI... (27/30)
+2026-01-02T03:39:11.802456467Z Waiting for ComfyUI... (28/30)
+2026-01-02T03:39:13.817391323Z Waiting for ComfyUI... (29/30)
+2026-01-02T03:39:15.831719978Z Waiting for ComfyUI... (30/30)
+2026-01-02T03:39:17.833692478Z Starting RunPod Handler...
+2026-01-02T03:39:19.314357517Z Traceback (most recent call last):
+2026-01-02T03:39:19.314385008Z   File "/rp_handler.py", line 8, in <module>
+2026-01-02T03:39:19.314388108Z     import comfy_utils
+2026-01-02T03:39:19.314391318Z   File "/comfy_utils.py", line 1, in <module>
+2026-01-02T03:39:19.314394279Z     import websocket
+2026-01-02T03:39:19.314396789Z ModuleNotFoundError: No module named 'websocket'
+2026-01-02T03:39:21.400472688Z ==========
+2026-01-02T03:39:21.400498889Z == CUDA ==
+2026-01-02T03:39:21.400663995Z ==========
+2026-01-02T03:39:21.406243142Z CUDA Version 12.1.1
+2026-01-02T03:39:21.408049413Z Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+2026-01-02T03:39:21.410257487Z This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+2026-01-02T03:39:21.410265408Z By pulling and using the container, you accept the terms and conditions of this license:
+2026-01-02T03:39:21.410273428Z https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+2026-01-02T03:39:21.410286638Z A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+2026-01-02T03:39:21.430323433Z Starting ComfyUI...
+2026-01-02T03:39:21.430764717Z Waiting for ComfyUI to be ready...
+2026-01-02T03:39:21.441625813Z Waiting for ComfyUI... (1/30)
+2026-01-02T03:39:22.619429802Z [START] Security scan
+2026-01-02T03:39:22.619456873Z [DONE] Security scan
+2026-01-02T03:39:22.619461083Z ## ComfyUI-Manager: installing dependencies done.
+2026-01-02T03:39:22.619524225Z ** ComfyUI startup time: 2026-01-02 03:39:22.619
+2026-01-02T03:39:22.619703471Z ** Platform: Linux
+2026-01-02T03:39:22.619848816Z ** Python version: 3.10.12 (main, Nov  4 2025, 08:48:33) [GCC 11.4.0]
+2026-01-02T03:39:22.620016932Z ** Python executable: /usr/bin/python3
+2026-01-02T03:39:22.620187328Z ** ComfyUI Path: /comfyui
+2026-01-02T03:39:22.620348333Z ** ComfyUI Base Folder Path: /comfyui
+2026-01-02T03:39:22.620526159Z ** User directory: /comfyui/user
+2026-01-02T03:39:22.620721856Z ** ComfyUI-Manager config path: /comfyui/user/__manager/config.ini
+2026-01-02T03:39:22.620896641Z ** Log path: /comfyui/user/comfyui.log
+2026-01-02T03:39:23.277912668Z Prestartup times for custom nodes:
+2026-01-02T03:39:23.278242519Z    1.7 seconds: /comfyui/custom_nodes/ComfyUI-Manager
+2026-01-02T03:39:23.456065682Z Waiting for ComfyUI... (2/30)
+2026-01-02T03:39:23.957031918Z A module that was compiled using NumPy 1.x cannot be run in
+2026-01-02T03:39:23.957035238Z NumPy 2.2.6 as it may crash. To support both 1.x and 2.x
+2026-01-02T03:39:23.957038018Z versions of NumPy, modules must be compiled with NumPy 2.0.
+2026-01-02T03:39:23.957040528Z Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+2026-01-02T03:39:23.957046569Z If you are a user of the module, the easiest solution will be to
+2026-01-02T03:39:23.957049169Z downgrade to 'numpy<2' or try to upgrade the affected module.
+2026-01-02T03:39:23.957051559Z We expect that some modules will need time to support NumPy 2.
+2026-01-02T03:39:23.957056609Z Traceback (most recent call last):  File "/comfyui/main.py", line 175, in <module>
+2026-01-02T03:39:23.957059769Z     import comfy.utils
+2026-01-02T03:39:23.957062719Z   File "/comfyui/comfy/utils.py", line 20, in <module>
+2026-01-02T03:39:23.957065169Z     import torch
+2026-01-02T03:39:23.957067919Z   File "/usr/local/lib/python3.10/dist-packages/torch/__init__.py", line 1382, in <module>
+2026-01-02T03:39:23.957070409Z     from .functional import *  # noqa: F403
+2026-01-02T03:39:23.957073239Z   File "/usr/local/lib/python3.10/dist-packages/torch/functional.py", line 7, in <module>
+2026-01-02T03:39:23.957075680Z     import torch.nn.functional as F
+2026-01-02T03:39:23.957078210Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/__init__.py", line 1, in <module>
+2026-01-02T03:39:23.957080720Z     from .modules import *  # noqa: F403
+2026-01-02T03:39:23.957083220Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/__init__.py", line 35, in <module>
+2026-01-02T03:39:23.957086210Z     from .transformer import TransformerEncoder, TransformerDecoder, \
+2026-01-02T03:39:23.957088730Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py", line 20, in <module>
+2026-01-02T03:39:23.957091370Z     device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+2026-01-02T03:39:23.957342778Z /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+2026-01-02T03:39:23.957346469Z   device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+2026-01-02T03:39:24.726166687Z Warning, you are using an old pytorch version and some ckpt/pt files might be loaded unsafely. Upgrading to 2.4 or above is recommended as older versions of pytorch are no longer supported.
+2026-01-02T03:39:25.028798129Z Total VRAM 20043 MB, total RAM 257586 MB
+2026-01-02T03:39:25.028829230Z pytorch version: 2.1.2+cu121
+2026-01-02T03:39:25.029002206Z Set vram state to: NORMAL_VRAM
+2026-01-02T03:39:25.029099070Z Device: cuda:0 NVIDIA RTX A4500 : cudaMallocAsync
+2026-01-02T03:39:25.029256975Z Using async weight offloading with 2 streams
+2026-01-02T03:39:25.029440291Z Enabled pinned memory 244706.0
+2026-01-02T03:39:25.030999573Z Please update pytorch to use native RMSNorm
+2026-01-02T03:39:25.202373690Z Traceback (most recent call last):
+2026-01-02T03:39:25.202405731Z   File "/comfyui/main.py", line 177, in <module>
+2026-01-02T03:39:25.202507794Z     import execution
+2026-01-02T03:39:25.202557116Z   File "/comfyui/execution.py", line 16, in <module>
+2026-01-02T03:39:25.202780643Z     from latent_preview import set_preview_method
+2026-01-02T03:39:25.202821215Z   File "/comfyui/latent_preview.py", line 5, in <module>
+2026-01-02T03:39:25.203010791Z     from comfy.sd import VAE
+2026-01-02T03:39:25.203053462Z   File "/comfyui/comfy/sd.py", line 11, in <module>
+2026-01-02T03:39:25.203242409Z     from .ldm.cascade.stage_c_coder import StageC_coder
+2026-01-02T03:39:25.203285910Z   File "/comfyui/comfy/ldm/cascade/stage_c_coder.py", line 19, in <module>
+2026-01-02T03:39:25.203479457Z     import torchvision
+2026-01-02T03:39:25.203563420Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/__init__.py", line 6, in <module>
+2026-01-02T03:39:25.203751866Z     from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils
+2026-01-02T03:39:25.203809318Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/models/__init__.py", line 2, in <module>
+2026-01-02T03:39:25.203984004Z     from .convnext import *
+2026-01-02T03:39:25.204042166Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/models/convnext.py", line 8, in <module>
+2026-01-02T03:39:25.204216662Z     from ..ops.misc import Conv2dNormActivation, Permute
+2026-01-02T03:39:25.204277584Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/ops/__init__.py", line 1, in <module>
+2026-01-02T03:39:25.204449980Z     from ._register_onnx_ops import _register_custom_op
+2026-01-02T03:39:25.204510402Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/ops/_register_onnx_ops.py", line 5, in <module>
+2026-01-02T03:39:25.204711458Z     from torch.onnx import symbolic_opset11 as opset11
+2026-01-02T03:39:25.204765290Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/__init__.py", line 46, in <module>
+2026-01-02T03:39:25.204949436Z     from ._internal.exporter import (  # usort:skip. needs to be last to avoid circular import
+2026-01-02T03:39:25.205001378Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/exporter.py", line 42, in <module>
+2026-01-02T03:39:25.205184344Z     from torch.onnx._internal.fx import (
+2026-01-02T03:39:25.205235206Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/fx/__init__.py", line 1, in <module>
+2026-01-02T03:39:25.205419622Z     from .patcher import ONNXTorchPatcher
+2026-01-02T03:39:25.205468114Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/fx/patcher.py", line 11, in <module>
+2026-01-02T03:39:25.205673551Z     import transformers  # type: ignore[import]
+2026-01-02T03:39:25.205723482Z   File "/usr/local/lib/python3.10/dist-packages/transformers/__init__.py", line 27, in <module>
+2026-01-02T03:39:25.205911739Z     from . import dependency_versions_check
+2026-01-02T03:39:25.205962730Z   File "/usr/local/lib/python3.10/dist-packages/transformers/dependency_versions_check.py", line 16, in <module>
+2026-01-02T03:39:25.206142306Z     from .utils.versions import require_version, require_version_core
+2026-01-02T03:39:25.206191388Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/__init__.py", line 24, in <module>
+2026-01-02T03:39:25.206373684Z     from .auto_docstring import (
+2026-01-02T03:39:25.206429566Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/auto_docstring.py", line 30, in <module>
+2026-01-02T03:39:25.206623423Z     from .generic import ModelOutput
+2026-01-02T03:39:25.206692855Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 465, in <module>
+2026-01-02T03:39:25.206913152Z     _torch_pytree.register_pytree_node(
+2026-01-02T03:39:25.207242353Z AttributeError: module 'torch.utils._pytree' has no attribute 'register_pytree_node'. Did you mean: '_register_pytree_node'?
+2026-01-02T03:39:25.469755836Z Waiting for ComfyUI... (3/30)
+2026-01-02T03:39:27.484098412Z Waiting for ComfyUI... (4/30)
+2026-01-02T03:39:29.498753239Z Waiting for ComfyUI... (5/30)
+2026-01-02T03:39:31.513450977Z Waiting for ComfyUI... (6/30)
+2026-01-02T03:39:33.528326560Z Waiting for ComfyUI... (7/30)
+2026-01-02T03:39:35.543237416Z Waiting for ComfyUI... (8/30)
+2026-01-02T03:39:37.556337900Z Waiting for ComfyUI... (9/30)
+2026-01-02T03:39:39.571020177Z Waiting for ComfyUI... (10/30)
+2026-01-02T03:39:41.585108075Z Waiting for ComfyUI... (11/30)
+2026-01-02T03:39:43.599436710Z Waiting for ComfyUI... (12/30)
+2026-01-02T03:39:45.613290340Z Waiting for ComfyUI... (13/30)
+2026-01-02T03:39:47.623933231Z Waiting for ComfyUI... (14/30)
+2026-01-02T03:39:49.639129176Z Waiting for ComfyUI... (15/30)
+2026-01-02T03:39:51.653824374Z Waiting for ComfyUI... (16/30)
+2026-01-02T03:39:53.668672767Z Waiting for ComfyUI... (17/30)
+2026-01-02T03:39:55.683262601Z Waiting for ComfyUI... (18/30)
+2026-01-02T03:39:57.697201653Z Waiting for ComfyUI... (19/30)
+2026-01-02T03:39:59.711927282Z Waiting for ComfyUI... (20/30)
+2026-01-02T03:40:01.727058994Z Waiting for ComfyUI... (21/30)
+2026-01-02T03:40:03.741331208Z Waiting for ComfyUI... (22/30)
+2026-01-02T03:40:05.755691965Z Waiting for ComfyUI... (23/30)
+2026-01-02T03:40:07.769674718Z Waiting for ComfyUI... (24/30)
+2026-01-02T03:40:09.784505301Z Waiting for ComfyUI... (25/30)
+2026-01-02T03:40:11.798439153Z Waiting for ComfyUI... (26/30)
+2026-01-02T03:40:13.812599423Z Waiting for ComfyUI... (27/30)
+2026-01-02T03:40:15.827692794Z Waiting for ComfyUI... (28/30)
+2026-01-02T03:40:17.843018463Z Waiting for ComfyUI... (29/30)
+2026-01-02T03:40:19.857688780Z Waiting for ComfyUI... (30/30)
+2026-01-02T03:40:21.860371324Z Starting RunPod Handler...
+2026-01-02T03:40:23.346945322Z Traceback (most recent call last):
+2026-01-02T03:40:23.346982323Z   File "/rp_handler.py", line 8, in <module>
+2026-01-02T03:40:23.346985693Z     import comfy_utils
+2026-01-02T03:40:23.346988744Z   File "/comfy_utils.py", line 1, in <module>
+2026-01-02T03:40:23.346991304Z     import websocket
+2026-01-02T03:40:23.346993844Z ModuleNotFoundError: No module named 'websocket'
+2026-01-02T03:40:25.356081083Z ==========
+2026-01-02T03:40:25.356109334Z == CUDA ==
+2026-01-02T03:40:25.356197837Z ==========
+2026-01-02T03:40:25.360984078Z CUDA Version 12.1.1
+2026-01-02T03:40:25.362878182Z Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+2026-01-02T03:40:25.364980202Z This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+2026-01-02T03:40:25.364983862Z By pulling and using the container, you accept the terms and conditions of this license:
+2026-01-02T03:40:25.364987493Z https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+2026-01-02T03:40:25.364993703Z A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+2026-01-02T03:40:25.386327891Z Starting ComfyUI...
+2026-01-02T03:40:25.386811647Z Waiting for ComfyUI to be ready...
+2026-01-02T03:40:25.399874926Z Waiting for ComfyUI... (1/30)
+2026-01-02T03:40:26.542889555Z [START] Security scan
+2026-01-02T03:40:26.542914236Z [DONE] Security scan
+2026-01-02T03:40:26.542918796Z ## ComfyUI-Manager: installing dependencies done.
+2026-01-02T03:40:26.542923116Z ** ComfyUI startup time: 2026-01-02 03:40:26.542
+2026-01-02T03:40:26.542968558Z ** Platform: Linux
+2026-01-02T03:40:26.543051500Z ** Python version: 3.10.12 (main, Nov  4 2025, 08:48:33) [GCC 11.4.0]
+2026-01-02T03:40:26.543138263Z ** Python executable: /usr/bin/python3
+2026-01-02T03:40:26.543224596Z ** ComfyUI Path: /comfyui
+2026-01-02T03:40:26.543294599Z ** ComfyUI Base Folder Path: /comfyui
+2026-01-02T03:40:26.543386352Z ** User directory: /comfyui/user
+2026-01-02T03:40:26.543486585Z ** ComfyUI-Manager config path: /comfyui/user/__manager/config.ini
+2026-01-02T03:40:26.543581138Z ** Log path: /comfyui/user/comfyui.log
+2026-01-02T03:40:27.207671453Z Prestartup times for custom nodes:
+2026-01-02T03:40:27.207748755Z    1.7 seconds: /comfyui/custom_nodes/ComfyUI-Manager
+2026-01-02T03:40:27.414769941Z Waiting for ComfyUI... (2/30)
+2026-01-02T03:40:27.893908832Z A module that was compiled using NumPy 1.x cannot be run in
+2026-01-02T03:40:27.893912972Z NumPy 2.2.6 as it may crash. To support both 1.x and 2.x
+2026-01-02T03:40:27.893915663Z versions of NumPy, modules must be compiled with NumPy 2.0.
+2026-01-02T03:40:27.893918833Z Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+2026-01-02T03:40:27.893924493Z If you are a user of the module, the easiest solution will be to
+2026-01-02T03:40:27.893927503Z downgrade to 'numpy<2' or try to upgrade the affected module.
+2026-01-02T03:40:27.893930583Z We expect that some modules will need time to support NumPy 2.
+2026-01-02T03:40:27.893935723Z Traceback (most recent call last):  File "/comfyui/main.py", line 175, in <module>
+2026-01-02T03:40:27.893938593Z     import comfy.utils
+2026-01-02T03:40:27.893941783Z   File "/comfyui/comfy/utils.py", line 20, in <module>
+2026-01-02T03:40:27.893960034Z     import torch
+2026-01-02T03:40:27.893963094Z   File "/usr/local/lib/python3.10/dist-packages/torch/__init__.py", line 1382, in <module>
+2026-01-02T03:40:27.893965574Z     from .functional import *  # noqa: F403
+2026-01-02T03:40:27.893968554Z   File "/usr/local/lib/python3.10/dist-packages/torch/functional.py", line 7, in <module>
+2026-01-02T03:40:27.893970984Z     import torch.nn.functional as F
+2026-01-02T03:40:27.893973464Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/__init__.py", line 1, in <module>
+2026-01-02T03:40:27.893975925Z     from .modules import *  # noqa: F403
+2026-01-02T03:40:27.893978435Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/__init__.py", line 35, in <module>
+2026-01-02T03:40:27.893981435Z     from .transformer import TransformerEncoder, TransformerDecoder, \
+2026-01-02T03:40:27.893984195Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py", line 20, in <module>
+2026-01-02T03:40:27.893986755Z     device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+2026-01-02T03:40:27.894223223Z /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+2026-01-02T03:40:27.894233313Z   device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+2026-01-02T03:40:28.674312210Z Warning, you are using an old pytorch version and some ckpt/pt files might be loaded unsafely. Upgrading to 2.4 or above is recommended as older versions of pytorch are no longer supported.
+2026-01-02T03:40:28.988157710Z Total VRAM 20043 MB, total RAM 257586 MB
+2026-01-02T03:40:28.988193471Z pytorch version: 2.1.2+cu121
+2026-01-02T03:40:28.988265054Z Set vram state to: NORMAL_VRAM
+2026-01-02T03:40:28.988354187Z Device: cuda:0 NVIDIA RTX A4500 : cudaMallocAsync
+2026-01-02T03:40:28.988453430Z Using async weight offloading with 2 streams
+2026-01-02T03:40:28.988723469Z Enabled pinned memory 244706.0
+2026-01-02T03:40:28.990138687Z Please update pytorch to use native RMSNorm
+2026-01-02T03:40:29.161278675Z Traceback (most recent call last):
+2026-01-02T03:40:29.161309726Z   File "/comfyui/main.py", line 177, in <module>
+2026-01-02T03:40:29.161399149Z     import execution
+2026-01-02T03:40:29.161443161Z   File "/comfyui/execution.py", line 16, in <module>
+2026-01-02T03:40:29.161604656Z     from latent_preview import set_preview_method
+2026-01-02T03:40:29.161651518Z   File "/comfyui/latent_preview.py", line 5, in <module>
+2026-01-02T03:40:29.161828674Z     from comfy.sd import VAE
+2026-01-02T03:40:29.161891826Z   File "/comfyui/comfy/sd.py", line 11, in <module>
+2026-01-02T03:40:29.162036061Z     from .ldm.cascade.stage_c_coder import StageC_coder
+2026-01-02T03:40:29.162076512Z   File "/comfyui/comfy/ldm/cascade/stage_c_coder.py", line 19, in <module>
+2026-01-02T03:40:29.162244478Z     import torchvision
+2026-01-02T03:40:29.162322520Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/__init__.py", line 6, in <module>
+2026-01-02T03:40:29.162488806Z     from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils
+2026-01-02T03:40:29.162508667Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/models/__init__.py", line 2, in <module>
+2026-01-02T03:40:29.162686983Z     from .convnext import *
+2026-01-02T03:40:29.162738044Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/models/convnext.py", line 8, in <module>
+2026-01-02T03:40:29.162895500Z     from ..ops.misc import Conv2dNormActivation, Permute
+2026-01-02T03:40:29.162947351Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/ops/__init__.py", line 1, in <module>
+2026-01-02T03:40:29.163091506Z     from ._register_onnx_ops import _register_custom_op
+2026-01-02T03:40:29.163143348Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/ops/_register_onnx_ops.py", line 5, in <module>
+2026-01-02T03:40:29.163295453Z     from torch.onnx import symbolic_opset11 as opset11
+2026-01-02T03:40:29.163343195Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/__init__.py", line 46, in <module>
+2026-01-02T03:40:29.163515380Z     from ._internal.exporter import (  # usort:skip. needs to be last to avoid circular import
+2026-01-02T03:40:29.163549022Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/exporter.py", line 42, in <module>
+2026-01-02T03:40:29.163725487Z     from torch.onnx._internal.fx import (
+2026-01-02T03:40:29.163783879Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/fx/__init__.py", line 1, in <module>
+2026-01-02T03:40:29.163928704Z     from .patcher import ONNXTorchPatcher
+2026-01-02T03:40:29.163970576Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/fx/patcher.py", line 11, in <module>
+2026-01-02T03:40:29.164125621Z     import transformers  # type: ignore[import]
+2026-01-02T03:40:29.164168482Z   File "/usr/local/lib/python3.10/dist-packages/transformers/__init__.py", line 27, in <module>
+2026-01-02T03:40:29.164332808Z     from . import dependency_versions_check
+2026-01-02T03:40:29.164382920Z   File "/usr/local/lib/python3.10/dist-packages/transformers/dependency_versions_check.py", line 16, in <module>
+2026-01-02T03:40:29.164535375Z     from .utils.versions import require_version, require_version_core
+2026-01-02T03:40:29.164582576Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/__init__.py", line 24, in <module>
+2026-01-02T03:40:29.164756552Z     from .auto_docstring import (
+2026-01-02T03:40:29.164814834Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/auto_docstring.py", line 30, in <module>
+2026-01-02T03:40:29.164964569Z     from .generic import ModelOutput
+2026-01-02T03:40:29.165006911Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 465, in <module>
+2026-01-02T03:40:29.165207207Z     _torch_pytree.register_pytree_node(
+2026-01-02T03:40:29.165501497Z AttributeError: module 'torch.utils._pytree' has no attribute 'register_pytree_node'. Did you mean: '_register_pytree_node'?
+2026-01-02T03:40:29.428516857Z Waiting for ComfyUI... (3/30)
+2026-01-02T03:40:31.442748319Z Waiting for ComfyUI... (4/30)
+2026-01-02T03:40:33.456247116Z Waiting for ComfyUI... (5/30)
+2026-01-02T03:40:35.470146488Z Waiting for ComfyUI... (6/30)
+2026-01-02T03:40:37.484119751Z Waiting for ComfyUI... (7/30)
+2026-01-02T03:40:39.498652693Z Waiting for ComfyUI... (8/30)
+2026-01-02T03:40:41.509014905Z Waiting for ComfyUI... (9/30)
+2026-01-02T03:40:43.523818697Z Waiting for ComfyUI... (10/30)
+2026-01-02T03:40:45.538286967Z Waiting for ComfyUI... (11/30)
+2026-01-02T03:40:47.553291765Z Waiting for ComfyUI... (12/30)
+2026-01-02T03:40:49.567576019Z Waiting for ComfyUI... (13/30)
+2026-01-02T03:40:51.582294548Z Waiting for ComfyUI... (14/30)
+2026-01-02T03:40:53.596427947Z Waiting for ComfyUI... (15/30)
+2026-01-02T03:40:55.611344052Z Waiting for ComfyUI... (16/30)
+2026-01-02T03:40:57.625815102Z Waiting for ComfyUI... (17/30)
+2026-01-02T03:40:59.640313054Z Waiting for ComfyUI... (18/30)
+2026-01-02T03:41:01.655148826Z Waiting for ComfyUI... (19/30)
+2026-01-02T03:41:03.666166290Z Waiting for ComfyUI... (20/30)
+2026-01-02T03:41:05.681095546Z Waiting for ComfyUI... (21/30)
+2026-01-02T03:41:07.696214318Z Waiting for ComfyUI... (22/30)
+2026-01-02T03:41:09.710922226Z Waiting for ComfyUI... (23/30)
+2026-01-02T03:41:11.726283217Z Waiting for ComfyUI... (24/30)
+2026-01-02T03:41:13.741328706Z Waiting for ComfyUI... (25/30)
+2026-01-02T03:41:15.752210086Z Waiting for ComfyUI... (26/30)
+2026-01-02T03:41:17.766295303Z Waiting for ComfyUI... (27/30)
+2026-01-02T03:41:19.780591088Z Waiting for ComfyUI... (28/30)
+2026-01-02T03:41:21.795725550Z Waiting for ComfyUI... (29/30)
+2026-01-02T03:41:23.809669053Z Waiting for ComfyUI... (30/30)
+2026-01-02T03:41:25.812281514Z Starting RunPod Handler...
+2026-01-02T03:41:27.289919382Z Traceback (most recent call last):
+2026-01-02T03:41:27.289974603Z   File "/rp_handler.py", line 8, in <module>
+2026-01-02T03:41:27.289981064Z     import comfy_utils
+2026-01-02T03:41:27.289987794Z   File "/comfy_utils.py", line 1, in <module>
+2026-01-02T03:41:27.289993414Z     import websocket
+2026-01-02T03:41:27.289999704Z ModuleNotFoundError: No module named 'websocket'
+2026-01-02T03:41:29.240770741Z ==========
+2026-01-02T03:41:29.240777421Z == CUDA ==
+2026-01-02T03:41:29.240800212Z ==========
+2026-01-02T03:41:29.246445482Z CUDA Version 12.1.1
+2026-01-02T03:41:29.248319355Z Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+2026-01-02T03:41:29.249546977Z This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+2026-01-02T03:41:29.249554007Z By pulling and using the container, you accept the terms and conditions of this license:
+2026-01-02T03:41:29.249560117Z https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+2026-01-02T03:41:29.249571387Z A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+2026-01-02T03:41:29.267893404Z Starting ComfyUI...
+2026-01-02T03:41:29.268343799Z Waiting for ComfyUI to be ready...
+2026-01-02T03:41:29.281352217Z Waiting for ComfyUI... (1/30)
+2026-01-02T03:41:30.446142328Z [START] Security scan
+2026-01-02T03:41:30.446173669Z [DONE] Security scan
+2026-01-02T03:41:30.446179889Z ## ComfyUI-Manager: installing dependencies done.
+2026-01-02T03:41:30.446186170Z ** ComfyUI startup time: 2026-01-02 03:41:30.446
+2026-01-02T03:41:30.446270473Z ** Platform: Linux
+2026-01-02T03:41:30.446365466Z ** Python version: 3.10.12 (main, Nov  4 2025, 08:48:33) [GCC 11.4.0]
+2026-01-02T03:41:30.446491300Z ** Python executable: /usr/bin/python3
+2026-01-02T03:41:30.446560212Z ** ComfyUI Path: /comfyui
+2026-01-02T03:41:30.446721358Z ** ComfyUI Base Folder Path: /comfyui
+2026-01-02T03:41:30.446818891Z ** User directory: /comfyui/user
+2026-01-02T03:41:30.446909354Z ** ComfyUI-Manager config path: /comfyui/user/__manager/config.ini
+2026-01-02T03:41:30.447056039Z ** Log path: /comfyui/user/comfyui.log
+2026-01-02T03:41:31.111057440Z Prestartup times for custom nodes:
+2026-01-02T03:41:31.111193145Z    1.7 seconds: /comfyui/custom_nodes/ComfyUI-Manager
+2026-01-02T03:41:31.295756155Z Waiting for ComfyUI... (2/30)
+2026-01-02T03:41:31.814243360Z A module that was compiled using NumPy 1.x cannot be run in
+2026-01-02T03:41:31.814246700Z NumPy 2.2.6 as it may crash. To support both 1.x and 2.x
+2026-01-02T03:41:31.814249470Z versions of NumPy, modules must be compiled with NumPy 2.0.
+2026-01-02T03:41:31.814252281Z Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+2026-01-02T03:41:31.814257591Z If you are a user of the module, the easiest solution will be to
+2026-01-02T03:41:31.814260061Z downgrade to 'numpy<2' or try to upgrade the affected module.
+2026-01-02T03:41:31.814262571Z We expect that some modules will need time to support NumPy 2.
+2026-01-02T03:41:31.814267371Z Traceback (most recent call last):  File "/comfyui/main.py", line 175, in <module>
+2026-01-02T03:41:31.814270371Z     import comfy.utils
+2026-01-02T03:41:31.814273551Z   File "/comfyui/comfy/utils.py", line 20, in <module>
+2026-01-02T03:41:31.814276221Z     import torch
+2026-01-02T03:41:31.814279181Z   File "/usr/local/lib/python3.10/dist-packages/torch/__init__.py", line 1382, in <module>
+2026-01-02T03:41:31.814281652Z     from .functional import *  # noqa: F403
+2026-01-02T03:41:31.814284412Z   File "/usr/local/lib/python3.10/dist-packages/torch/functional.py", line 7, in <module>
+2026-01-02T03:41:31.814286852Z     import torch.nn.functional as F
+2026-01-02T03:41:31.814289282Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/__init__.py", line 1, in <module>
+2026-01-02T03:41:31.814291722Z     from .modules import *  # noqa: F403
+2026-01-02T03:41:31.814294202Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/__init__.py", line 35, in <module>
+2026-01-02T03:41:31.814297122Z     from .transformer import TransformerEncoder, TransformerDecoder, \
+2026-01-02T03:41:31.814299512Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py", line 20, in <module>
+2026-01-02T03:41:31.814302252Z     device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+2026-01-02T03:41:31.814538410Z /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+2026-01-02T03:41:31.814556231Z   device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+2026-01-02T03:41:32.589288018Z Warning, you are using an old pytorch version and some ckpt/pt files might be loaded unsafely. Upgrading to 2.4 or above is recommended as older versions of pytorch are no longer supported.
+2026-01-02T03:41:32.896527396Z Total VRAM 20043 MB, total RAM 257586 MB
+2026-01-02T03:41:32.896562277Z pytorch version: 2.1.2+cu121
+2026-01-02T03:41:32.896968630Z Set vram state to: NORMAL_VRAM
+2026-01-02T03:41:32.896999761Z Device: cuda:0 NVIDIA RTX A4500 : cudaMallocAsync
+2026-01-02T03:41:32.897126846Z Using async weight offloading with 2 streams
+2026-01-02T03:41:32.897344923Z Enabled pinned memory 244706.0
+2026-01-02T03:41:32.898795892Z Please update pytorch to use native RMSNorm
+2026-01-02T03:41:33.069689832Z Traceback (most recent call last):
+2026-01-02T03:41:33.069728073Z   File "/comfyui/main.py", line 177, in <module>
+2026-01-02T03:41:33.069782435Z     import execution
+2026-01-02T03:41:33.069849247Z   File "/comfyui/execution.py", line 16, in <module>
+2026-01-02T03:41:33.070012363Z     from latent_preview import set_preview_method
+2026-01-02T03:41:33.070039594Z   File "/comfyui/latent_preview.py", line 5, in <module>
+2026-01-02T03:41:33.070242840Z     from comfy.sd import VAE
+2026-01-02T03:41:33.070257691Z   File "/comfyui/comfy/sd.py", line 11, in <module>
+2026-01-02T03:41:33.070443317Z     from .ldm.cascade.stage_c_coder import StageC_coder
+2026-01-02T03:41:33.070494629Z   File "/comfyui/comfy/ldm/cascade/stage_c_coder.py", line 19, in <module>
+2026-01-02T03:41:33.070681405Z     import torchvision
+2026-01-02T03:41:33.070715926Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/__init__.py", line 6, in <module>
+2026-01-02T03:41:33.070897312Z     from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils
+2026-01-02T03:41:33.070924353Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/models/__init__.py", line 2, in <module>
+2026-01-02T03:41:33.071100389Z     from .convnext import *
+2026-01-02T03:41:33.071145861Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/models/convnext.py", line 8, in <module>
+2026-01-02T03:41:33.071301876Z     from ..ops.misc import Conv2dNormActivation, Permute
+2026-01-02T03:41:33.071340207Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/ops/__init__.py", line 1, in <module>
+2026-01-02T03:41:33.071498753Z     from ._register_onnx_ops import _register_custom_op
+2026-01-02T03:41:33.071545944Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/ops/_register_onnx_ops.py", line 5, in <module>
+2026-01-02T03:41:33.071715970Z     from torch.onnx import symbolic_opset11 as opset11
+2026-01-02T03:41:33.071775892Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/__init__.py", line 46, in <module>
+2026-01-02T03:41:33.071926027Z     from ._internal.exporter import (  # usort:skip. needs to be last to avoid circular import
+2026-01-02T03:41:33.071977939Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/exporter.py", line 42, in <module>
+2026-01-02T03:41:33.072131994Z     from torch.onnx._internal.fx import (
+2026-01-02T03:41:33.072178956Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/fx/__init__.py", line 1, in <module>
+2026-01-02T03:41:33.072336611Z     from .patcher import ONNXTorchPatcher
+2026-01-02T03:41:33.072387613Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/fx/patcher.py", line 11, in <module>
+2026-01-02T03:41:33.072539958Z     import transformers  # type: ignore[import]
+2026-01-02T03:41:33.072593150Z   File "/usr/local/lib/python3.10/dist-packages/transformers/__init__.py", line 27, in <module>
+2026-01-02T03:41:33.072775266Z     from . import dependency_versions_check
+2026-01-02T03:41:33.072831198Z   File "/usr/local/lib/python3.10/dist-packages/transformers/dependency_versions_check.py", line 16, in <module>
+2026-01-02T03:41:33.072977373Z     from .utils.versions import require_version, require_version_core
+2026-01-02T03:41:33.073031954Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/__init__.py", line 24, in <module>
+2026-01-02T03:41:33.073181109Z     from .auto_docstring import (
+2026-01-02T03:41:33.073231331Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/auto_docstring.py", line 30, in <module>
+2026-01-02T03:41:33.073384136Z     from .generic import ModelOutput
+2026-01-02T03:41:33.073429068Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 465, in <module>
+2026-01-02T03:41:33.073646285Z     _torch_pytree.register_pytree_node(
+2026-01-02T03:41:33.073937045Z AttributeError: module 'torch.utils._pytree' has no attribute 'register_pytree_node'. Did you mean: '_register_pytree_node'?
+2026-01-02T03:41:33.310785224Z Waiting for ComfyUI... (3/30)
+2026-01-02T03:41:35.325190132Z Waiting for ComfyUI... (4/30)
+2026-01-02T03:41:37.340057986Z Waiting for ComfyUI... (5/30)
+2026-01-02T03:41:39.353421229Z Waiting for ComfyUI... (6/30)
+2026-01-02T03:41:41.366903636Z Waiting for ComfyUI... (7/30)
+2026-01-02T03:41:43.380460375Z Waiting for ComfyUI... (8/30)
+2026-01-02T03:41:45.394762110Z Waiting for ComfyUI... (9/30)
+2026-01-02T03:41:47.408997002Z Waiting for ComfyUI... (10/30)
+2026-01-02T03:41:49.422930864Z Waiting for ComfyUI... (11/30)
+2026-01-02T03:41:51.436974870Z Waiting for ComfyUI... (12/30)
+2026-01-02T03:41:53.451651217Z Waiting for ComfyUI... (13/30)
+2026-01-02T03:41:55.467175873Z Waiting for ComfyUI... (14/30)
+2026-01-02T03:41:57.482264174Z Waiting for ComfyUI... (15/30)
+2026-01-02T03:41:59.496400373Z Waiting for ComfyUI... (16/30)
+2026-01-02T03:42:01.511108801Z Waiting for ComfyUI... (17/30)
+2026-01-02T03:42:03.525480938Z Waiting for ComfyUI... (18/30)
+2026-01-02T03:42:05.541152689Z Waiting for ComfyUI... (19/30)
+2026-01-02T03:42:07.555971711Z Waiting for ComfyUI... (20/30)
+2026-01-02T03:42:09.570950988Z Waiting for ComfyUI... (21/30)
+2026-01-02T03:42:11.585524772Z Waiting for ComfyUI... (22/30)
+2026-01-02T03:42:13.600554131Z Waiting for ComfyUI... (23/30)
+2026-01-02T03:42:15.615844989Z Waiting for ComfyUI... (24/30)
+2026-01-02T03:42:17.630055261Z Waiting for ComfyUI... (25/30)
+2026-01-02T03:42:19.644986926Z Waiting for ComfyUI... (26/30)
+2026-01-02T03:42:21.659398365Z Waiting for ComfyUI... (27/30)
+2026-01-02T03:42:23.674172045Z Waiting for ComfyUI... (28/30)
+2026-01-02T03:42:25.688956286Z Waiting for ComfyUI... (29/30)
+2026-01-02T03:42:27.703140117Z Waiting for ComfyUI... (30/30)
+2026-01-02T03:42:29.704767665Z Starting RunPod Handler...
+2026-01-02T03:42:31.172083505Z Traceback (most recent call last):
+2026-01-02T03:42:31.172137407Z   File "/rp_handler.py", line 8, in <module>
+2026-01-02T03:42:31.172144127Z     import comfy_utils
+2026-01-02T03:42:31.172150297Z   File "/comfy_utils.py", line 1, in <module>
+2026-01-02T03:42:31.172155887Z     import websocket
+2026-01-02T03:42:31.172161608Z ModuleNotFoundError: No module named 'websocket'
+2026-01-02T03:42:33.234565321Z ==========
+2026-01-02T03:42:33.234576431Z == CUDA ==
+2026-01-02T03:42:33.234582271Z ==========
+2026-01-02T03:42:33.239782326Z CUDA Version 12.1.1
+2026-01-02T03:42:33.241695431Z Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+2026-01-02T03:42:33.243506132Z This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+2026-01-02T03:42:33.243511532Z By pulling and using the container, you accept the terms and conditions of this license:
+2026-01-02T03:42:33.243516622Z https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+2026-01-02T03:42:33.243527082Z A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+2026-01-02T03:42:33.261977463Z Starting ComfyUI...
+2026-01-02T03:42:33.262323105Z Waiting for ComfyUI to be ready...
+2026-01-02T03:42:33.274249066Z Waiting for ComfyUI... (1/30)
+2026-01-02T03:42:34.405721346Z [START] Security scan
+2026-01-02T03:42:34.405742197Z [DONE] Security scan
+2026-01-02T03:42:34.405745147Z ## ComfyUI-Manager: installing dependencies done.
+2026-01-02T03:42:34.405797829Z ** ComfyUI startup time: 2026-01-02 03:42:34.405
+2026-01-02T03:42:34.405866601Z ** Platform: Linux
+2026-01-02T03:42:34.405986985Z ** Python version: 3.10.12 (main, Nov  4 2025, 08:48:33) [GCC 11.4.0]
+2026-01-02T03:42:34.406052197Z ** Python executable: /usr/bin/python3
+2026-01-02T03:42:34.406157201Z ** ComfyUI Path: /comfyui
+2026-01-02T03:42:34.406262414Z ** ComfyUI Base Folder Path: /comfyui
+2026-01-02T03:42:34.406369768Z ** User directory: /comfyui/user
+2026-01-02T03:42:34.406435590Z ** ComfyUI-Manager config path: /comfyui/user/__manager/config.ini
+2026-01-02T03:42:34.406554194Z ** Log path: /comfyui/user/comfyui.log
+2026-01-02T03:42:35.070066099Z Prestartup times for custom nodes:
+2026-01-02T03:42:35.070158762Z    1.7 seconds: /comfyui/custom_nodes/ComfyUI-Manager
+2026-01-02T03:42:35.290056761Z Waiting for ComfyUI... (2/30)
+2026-01-02T03:42:35.790786229Z A module that was compiled using NumPy 1.x cannot be run in
+2026-01-02T03:42:35.790789719Z NumPy 2.2.6 as it may crash. To support both 1.x and 2.x
+2026-01-02T03:42:35.790792509Z versions of NumPy, modules must be compiled with NumPy 2.0.
+2026-01-02T03:42:35.790795309Z Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+2026-01-02T03:42:35.790800560Z If you are a user of the module, the easiest solution will be to
+2026-01-02T03:42:35.790803080Z downgrade to 'numpy<2' or try to upgrade the affected module.
+2026-01-02T03:42:35.790805490Z We expect that some modules will need time to support NumPy 2.
+2026-01-02T03:42:35.790810720Z Traceback (most recent call last):  File "/comfyui/main.py", line 175, in <module>
+2026-01-02T03:42:35.790813500Z     import comfy.utils
+2026-01-02T03:42:35.790816270Z   File "/comfyui/comfy/utils.py", line 20, in <module>
+2026-01-02T03:42:35.790818940Z     import torch
+2026-01-02T03:42:35.790821820Z   File "/usr/local/lib/python3.10/dist-packages/torch/__init__.py", line 1382, in <module>
+2026-01-02T03:42:35.790824280Z     from .functional import *  # noqa: F403
+2026-01-02T03:42:35.790827110Z   File "/usr/local/lib/python3.10/dist-packages/torch/functional.py", line 7, in <module>
+2026-01-02T03:42:35.790829581Z     import torch.nn.functional as F
+2026-01-02T03:42:35.790832351Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/__init__.py", line 1, in <module>
+2026-01-02T03:42:35.790835061Z     from .modules import *  # noqa: F403
+2026-01-02T03:42:35.790837541Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/__init__.py", line 35, in <module>
+2026-01-02T03:42:35.790840371Z     from .transformer import TransformerEncoder, TransformerDecoder, \
+2026-01-02T03:42:35.790842771Z   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py", line 20, in <module>
+2026-01-02T03:42:35.790845311Z     device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+2026-01-02T03:42:35.791128211Z /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+2026-01-02T03:42:35.791138681Z   device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+2026-01-02T03:42:36.554791045Z Warning, you are using an old pytorch version and some ckpt/pt files might be loaded unsafely. Upgrading to 2.4 or above is recommended as older versions of pytorch are no longer supported.
+2026-01-02T03:42:36.864691942Z Total VRAM 20043 MB, total RAM 257586 MB
+2026-01-02T03:42:36.864723274Z pytorch version: 2.1.2+cu121
+2026-01-02T03:42:36.865104896Z Set vram state to: NORMAL_VRAM
+2026-01-02T03:42:36.865177809Z Device: cuda:0 NVIDIA RTX A4500 : cudaMallocAsync
+2026-01-02T03:42:36.865296343Z Using async weight offloading with 2 streams
+2026-01-02T03:42:36.865448478Z Enabled pinned memory 244706.0
+2026-01-02T03:42:36.866963499Z Please update pytorch to use native RMSNorm
+2026-01-02T03:42:37.037427254Z Traceback (most recent call last):
+2026-01-02T03:42:37.037458395Z   File "/comfyui/main.py", line 177, in <module>
+2026-01-02T03:42:37.037577549Z     import execution
+2026-01-02T03:42:37.037654532Z   File "/comfyui/execution.py", line 16, in <module>
+2026-01-02T03:42:37.037802517Z     from latent_preview import set_preview_method
+2026-01-02T03:42:37.037849989Z   File "/comfyui/latent_preview.py", line 5, in <module>
+2026-01-02T03:42:37.038010844Z     from comfy.sd import VAE
+2026-01-02T03:42:37.038051445Z   File "/comfyui/comfy/sd.py", line 11, in <module>
+2026-01-02T03:42:37.038211391Z     from .ldm.cascade.stage_c_coder import StageC_coder
+2026-01-02T03:42:37.038252042Z   File "/comfyui/comfy/ldm/cascade/stage_c_coder.py", line 19, in <module>
+2026-01-02T03:42:37.038424848Z     import torchvision
+2026-01-02T03:42:37.038489550Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/__init__.py", line 6, in <module>
+2026-01-02T03:42:37.038670446Z     from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils
+2026-01-02T03:42:37.038715248Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/models/__init__.py", line 2, in <module>
+2026-01-02T03:42:37.038878323Z     from .convnext import *
+2026-01-02T03:42:37.038924605Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/models/convnext.py", line 8, in <module>
+2026-01-02T03:42:37.039094111Z     from ..ops.misc import Conv2dNormActivation, Permute
+2026-01-02T03:42:37.039135802Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/ops/__init__.py", line 1, in <module>
+2026-01-02T03:42:37.039288377Z     from ._register_onnx_ops import _register_custom_op
+2026-01-02T03:42:37.039334289Z   File "/usr/local/lib/python3.10/dist-packages/torchvision/ops/_register_onnx_ops.py", line 5, in <module>
+2026-01-02T03:42:37.039495964Z     from torch.onnx import symbolic_opset11 as opset11
+2026-01-02T03:42:37.039544736Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/__init__.py", line 46, in <module>
+2026-01-02T03:42:37.039720152Z     from ._internal.exporter import (  # usort:skip. needs to be last to avoid circular import
+2026-01-02T03:42:37.039778284Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/exporter.py", line 42, in <module>
+2026-01-02T03:42:37.039933029Z     from torch.onnx._internal.fx import (
+2026-01-02T03:42:37.039982870Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/fx/__init__.py", line 1, in <module>
+2026-01-02T03:42:37.040137026Z     from .patcher import ONNXTorchPatcher
+2026-01-02T03:42:37.040183067Z   File "/usr/local/lib/python3.10/dist-packages/torch/onnx/_internal/fx/patcher.py", line 11, in <module>
+2026-01-02T03:42:37.040344343Z     import transformers  # type: ignore[import]
+2026-01-02T03:42:37.040393294Z   File "/usr/local/lib/python3.10/dist-packages/transformers/__init__.py", line 27, in <module>
+2026-01-02T03:42:37.040559290Z     from . import dependency_versions_check
+2026-01-02T03:42:37.040618462Z   File "/usr/local/lib/python3.10/dist-packages/transformers/dependency_versions_check.py", line 16, in <module>
+2026-01-02T03:42:37.040794818Z     from .utils.versions import require_version, require_version_core
+2026-01-02T03:42:37.040827919Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/__init__.py", line 24, in <module>
+2026-01-02T03:42:37.040990754Z     from .auto_docstring import (
+2026-01-02T03:42:37.041043546Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/auto_docstring.py", line 30, in <module>
+2026-01-02T03:42:37.041198921Z     from .generic import ModelOutput
+2026-01-02T03:42:37.041244773Z   File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 465, in <module>
+2026-01-02T03:42:37.041447410Z     _torch_pytree.register_pytree_node(
+2026-01-02T03:42:37.041766530Z AttributeError: module 'torch.utils._pytree' has no attribute 'register_pytree_node'. Did you mean: '_register_pytree_node'?
+2026-01-02T03:42:37.304172780Z Waiting for ComfyUI... (3/30)
+2026-01-02T03:42:39.317867524Z Waiting for ComfyUI... (4/30)
+2026-01-02T03:42:41.332278462Z Waiting for ComfyUI... (5/30)
+2026-01-02T03:42:43.347306451Z Waiting for ComfyUI... (6/30)
+2026-01-02T03:42:45.362084472Z Waiting for ComfyUI... (7/30)
+2026-01-02T03:42:47.377004537Z Waiting for ComfyUI... (8/30)
+2026-01-02T03:42:49.391995115Z Waiting for ComfyUI... (9/30)
+2026-01-02T03:42:51.406417723Z Waiting for ComfyUI... (10/30)
+2026-01-02T03:42:53.420794041Z Waiting for ComfyUI... (11/30)
+2026-01-02T03:42:55.435529950Z Waiting for ComfyUI... (12/30)
+2026-01-02T03:42:57.450699724Z Waiting for ComfyUI... (13/30)
+2026-01-02T03:42:59.465480944Z Waiting for ComfyUI... (14/30)
+2026-01-02T03:43:01.480500343Z Waiting for ComfyUI... (15/30)
+2026-01-02T03:43:03.491291079Z Waiting for ComfyUI... (16/30)
+2026-01-02T03:43:05.506853857Z Waiting for ComfyUI... (17/30)
+2026-01-02T03:43:07.517016072Z Waiting for ComfyUI... (18/30)
+2026-01-02T03:43:09.531752531Z Waiting for ComfyUI... (19/30)
+2026-01-02T03:43:11.546340325Z Waiting for ComfyUI... (20/30)
+2026-01-02T03:43:13.559821542Z Waiting for ComfyUI... (21/30)
+2026-01-02T03:43:15.573811896Z Waiting for ComfyUI... (22/30)
+2026-01-02T03:43:17.587263092Z Waiting for ComfyUI... (23/30)
+2026-01-02T03:43:19.601963750Z Waiting for ComfyUI... (24/30)
+2026-01-02T03:43:21.616437741Z Waiting for ComfyUI... (25/30)
+2026-01-02T03:43:23.630620401Z Waiting for ComfyUI... (26/30)
+2026-01-02T03:43:25.643394794Z Waiting for ComfyUI... (27/30)
+2026-01-02T03:43:27.657075338Z Waiting for ComfyUI... (28/30)
+2026-01-02T03:43:29.671421204Z Waiting for ComfyUI... (29/30)
+2026-01-02T03:43:31.685981338Z Waiting for ComfyUI... (30/30)
+2026-01-02T03:43:33.688216416Z Starting RunPod Handler...
