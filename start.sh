@@ -19,6 +19,9 @@ done
 rm -rf /comfyui/output
 ln -s /runpod-volume/output /comfyui/output
 
+# Input folder for LoadImage (img2img uploads)
+mkdir -p /comfyui/input
+
 echo "Starting ComfyUI..."
 # Start ComfyUI in background
 python3 /comfyui/main.py --listen 127.0.0.1 --port 8188 &

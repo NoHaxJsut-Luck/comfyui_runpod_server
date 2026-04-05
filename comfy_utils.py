@@ -5,8 +5,11 @@ import urllib.request
 import urllib.parse
 import time
 import os
+import re
 
 SERVER_ADDRESS = "127.0.0.1:8188"
+COMFY_INPUT_DIR = os.environ.get("COMFY_INPUT_DIR", "/comfyui/input")
+MAX_INPUT_IMAGE_BYTES = int(os.environ.get("MAX_INPUT_IMAGE_BYTES", str(15 * 1024 * 1024)))
 CLIENT_ID = str(uuid.uuid4())
 
 def queue_prompt(prompt):
@@ -62,3 +65,36 @@ def connect_ws():
     ws = websocket.WebSocket()
     ws.connect("ws://{}/ws?clientId={}".format(SERVER_ADDRESS, CLIENT_ID))
     return ws
+
+
+def _validate_image_magic(data: bytes) -> None:
+    if len(data) < 12:
+        raise ValueError("Image too small or empty")
+    if data[:8] == b"\x89PNG\r\n\x1a\n":
+        return
+    if data[:3] == b"\xff\xd8\xff":
+        return
+    if data[:4] == b"RIFF" and data[8:12] == b"WEBP":
+        return
+    raise ValueError("Unsupported image type (use PNG, JPEG, or WebP)")
+
+
+def write_input_image(filename_hint: str, raw_bytes: bytes) -> str:
+    """
+    Save bytes to ComfyUI input folder; return basename for LoadImage.
+    """
+    if not raw_bytes:
+        raise ValueError("Empty image data")
+    if len(raw_bytes) > MAX_INPUT_IMAGE_BYTES:
+        raise ValueError(f"Image exceeds max size ({MAX_INPUT_IMAGE_BYTES // (1024 * 1024)} MB)")
+    _validate_image_magic(raw_bytes)
+    os.makedirs(COMFY_INPUT_DIR, exist_ok=True)
+    base = os.path.basename(filename_hint or "upload.png") or "upload.png"
+    base = re.sub(r"[^a-zA-Z0-9._-]", "_", base)
+    if not base.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
+        base = base + ".png"
+    final_name = f"rp_{uuid.uuid4().hex[:12]}_{base}"
+    path = os.path.join(COMFY_INPUT_DIR, final_name)
+    with open(path, "wb") as f:
+        f.write(raw_bytes)
+    return final_name

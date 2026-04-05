@@ -110,6 +110,25 @@ def handler(event):
         else:
             return {"status": "error", "message": "Download failed"}
 
+    # --- 3b. POST /input/image (reference image for img2img / LoadImage) ---
+    if route == '/input/image' and method == 'POST':
+        import base64
+        b64 = body.get('image_base64')
+        if not b64 or not isinstance(b64, str):
+            return {"error": "image_base64 is required"}
+        try:
+            raw = base64.b64decode(b64)
+        except Exception as e:
+            return {"error": f"Invalid base64: {e}"}
+        hint = body.get('filename') or 'upload.png'
+        try:
+            name = comfy_utils.write_input_image(hint, raw)
+            return {"name": name, "subfolder": "", "type": "input"}
+        except ValueError as e:
+            return {"error": str(e)}
+        except Exception as e:
+            return {"error": f"Failed to save image: {e}"}
+
     # --- 4. POST /run (Synchronous for stability) ---
     if route == '/run' and method == 'POST':
         workflow = body
